@@ -5,7 +5,7 @@ import {FormControl} from "@angular/forms";
 import {map, startWith} from "rxjs/operators";
 import {Observable} from "rxjs/index";
 import {PassageService} from "../../services/passage.service";
-import {DomSanitizer} from "@angular/platform-browser";
+import {DomSanitizer, SafeHtml} from "@angular/platform-browser";
 
 @Component({
   selector: "app-search",
@@ -23,7 +23,7 @@ export class SearchComponent implements OnInit {
   books: Book[];
   chapters = [];
   verses = [];
-  passage = "";
+  passage: SafeHtml;
   selectedBook: Book;
   selectedChapter: number;
   selectedVerse: number;
@@ -41,6 +41,8 @@ export class SearchComponent implements OnInit {
       {
         this.books = books_response_wrapper.response.books;
         console.table(this.books);
+        // Trigger an action to update filter
+        this.textControl.setValue("");
       }
     );
 
