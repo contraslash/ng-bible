@@ -1,0 +1,31 @@
+<input type="text" [formControl]="textControl">
+<select [formControl]="bookControl">
+      <option
+        *ngFor="let book of filteredBooks | async"
+        [ngValue]="book"
+      >
+        {{book.name}}
+      </option>
+    </select>
+
+<select [formControl]="chapterControl">
+  <option
+    *ngFor="let chapter of chapters"
+    [value]="chapter"
+  >
+    {{chapter}}
+  </option>
+</select>
+
+<select [formControl]="versesControl">
+  <option
+    *ngFor="let verse of verses"
+    [value]="verse"
+  >
+    {{verse}}
+  </option>
+</select>
+
+<p [innerHTML]="passage">
+
+</p>

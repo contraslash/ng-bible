@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  "production": false,
+  "bibles_org_api_key": "",
+  "bible_version": "spa-RVR1960",
+  "bibles_org_base_url": "bibles.org"
 };
 
 /*
