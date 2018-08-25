@@ -24,6 +24,8 @@ export class SearchComponent implements OnInit {
   chapters = [];
   verses = [];
   passage: SafeHtml;
+  sanitized_text: SafeHtml;
+  full_cite = "";
   selectedBook: Book;
   selectedChapter: number;
   selectedVerse: number;
@@ -126,7 +128,14 @@ export class SearchComponent implements OnInit {
       {
         console.log(passage_wrapper);
         console.log(passage_wrapper.response.search.result.passages[0].text);
-        this.passage = this.sanitizer.bypassSecurityTrustHtml(passage_wrapper.response.search.result.passages[0].text);
+        // this.sanitized_text = this.sanitizer.bypassSecurityTrustHtml(passage_wrapper.response.search.result.passages[0].text);
+        this.sanitized_text = passage_wrapper.response.search.result.passages[0].text;
+        this.passage = `
+<p>
+  ${this.sanitized_text}
+</p>
+<br/>
+<p align="right">${this.selectedBook.name} ${this.selectedChapter}:${this.selectedVerse}</p>`;
       }
     );
   }
