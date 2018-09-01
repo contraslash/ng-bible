@@ -1,6 +1,7 @@
 {
   "name": "bible-ng",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "main": "electron.prod.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -23,7 +24,9 @@
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
     "@ng-select/ng-select": "^2.5.0",
+    "audit": "0.0.6",
     "core-js": "^2.5.4",
+    "fix": "0.0.6",
     "rxjs": "^6.0.0",
     "simplehttpserver": "^0.2.1",
     "zone.js": "~0.8.26"
@@ -37,6 +40,8 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.2.1",
+    "electron": "^2.0.8",
+    "electron-packager": "^12.1.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "^3.0.0",

@@ -2,6 +2,8 @@
 
 src/environments/environment.local.ts
 
+maranatha-biblia*
+
 # compiled output
 /tmp
 /out-tsc
